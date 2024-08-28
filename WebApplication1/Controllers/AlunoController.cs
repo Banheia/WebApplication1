@@ -1,12 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Data.Repositorio.Interface;
 
 namespace WebApplication1.Controllers
 {
-    public class alunoController : Controller
+    public class AlunoController : Controller
     {
+        private readonly IAlunoRepositorio _alunoRepositorio;
+        public AlunoController(IAlunoRepositorio alunoRepositorio)
+        {
+            _alunoRepositorio = alunoRepositorio;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var aluno = _alunoRepositorio.BuscarAluno();
+
+            return View(aluno);
         }
     }
 }

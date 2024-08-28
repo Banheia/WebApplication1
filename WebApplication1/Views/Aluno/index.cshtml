@@ -4,3 +4,26 @@
 }
 
 <h1>index</h1>
+@model List<Aluno>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Cpf</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (Aluno aluno in Model)
+            {
+                <tr>
+                    <td>@aluno.Nome </td>
+                    <td>@aluno.Idade </td>
+                    <td>@aluno.Cpf </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

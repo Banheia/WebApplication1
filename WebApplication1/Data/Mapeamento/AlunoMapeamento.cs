@@ -11,10 +11,11 @@ namespace WebApplication1.Data.Mapeamento
             builder.ToTable("Aluno");
 
             builder.HasKey(t => t.Id);
+        
 
-            builder.Property(t => t.nome).HasColumnType("varchar(100)");
-            builder.Property(t => t.idade).HasColumnType("int");
-            builder.Property(t => t.cpf).HasColumnType("varchar(11)");
+            builder.Property(t => t.Nome).HasColumnType("varchar(100)");
+            builder.Property(t => t.Idade).HasColumnType("int");
+            builder.Property(t => t.Cpf).HasColumnType("varchar(11)");
 
         }
     }
