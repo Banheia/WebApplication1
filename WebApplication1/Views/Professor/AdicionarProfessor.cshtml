@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Adicionar Aluno";
 }
-@model Aluno
+@model Professor
 <form asp-controller="Aluno" asp-action="AdiconarAluno" method="post">
     <div class="mb-3 col-md-6">
         <label class="form-label">Nome</label>
@@ -9,7 +9,7 @@
     </div>
     <div class="mb-3 col-md-6">
         <label  class="form-label">Idade</label>
-        <input type="text" class="form-control" asp-for="Idade">
+        <input type="text" class="form-control" asp-for="Materia">
     </div>
     <div class="mb-3 col-md-6">
         <label  class="form-label">Cpf</label>

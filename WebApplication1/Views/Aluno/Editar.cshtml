@@ -1,8 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "Adicionar Aluno";
+    ViewData["Title"] = "index";
 }
 @model Aluno
-<form asp-controller="Aluno" asp-action="AdiconarAluno" method="post">
+<form asp-controller="Aluno" asp-action="EditarAluno" method="post">
+    <input type="hidden" asp-for="Id" />
     <div class="mb-3 col-md-6">
         <label class="form-label">Nome</label>
         <input type="text" class="form-control" asp-for="Nome">
@@ -15,6 +16,5 @@
         <label  class="form-label">Cpf</label>
         <input type="text" class="form-control" asp-for="Cpf">
     </div>
-
-    <button type="submit" class="btn btn-primary">Adiocionar</button>
+    <button type="submit" class="btn btn-primary">Editar Aluno</button>
 </form>

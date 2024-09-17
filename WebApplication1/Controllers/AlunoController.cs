@@ -23,6 +23,7 @@ namespace WebApplication1.Controllers
 
             return View();
         }
+
         public IActionResult InserirAluno(Aluno aluno)
         {
             try
@@ -34,6 +35,21 @@ namespace WebApplication1.Controllers
                 throw;
             }
             return  RedirectToAction("Index");
+        }
+        public IActionResult Editar(int Id) 
+        {
+            var aluno = _alunoRepositorio.BuscarID(Id);
+            return  View(aluno);
+        }
+        public IActionResult EditarAluno(Aluno aluno)
+        {
+                _alunoRepositorio.EditarAluno(aluno);
+                return RedirectToAction("Index");
+        }
+        public IActionResult RemoverAluno(Aluno aluno) 
+        {
+            _alunoRepositorio.RemoverAluno(aluno);
+            return RedirectToAction("Index");
         }
     }
 }

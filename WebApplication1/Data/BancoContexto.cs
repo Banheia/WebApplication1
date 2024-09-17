@@ -15,9 +15,11 @@ namespace WebApplication1.Data
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 modelBuilder.ApplyConfiguration(new AlunoMapeamento());
-            }
-
-            public DbSet<Aluno> Aluno { get; set; }
+            modelBuilder.ApplyConfiguration(new ProfessorMapeamento());
         }
+
+            public DbSet<Aluno> aluno { get; set; }
+            public DbSet<Professor> Professor { get; set; }
+    }
     
 }
