@@ -4,22 +4,20 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Data
 {
-    
-        public class BancoContexto : DbContext
+    public class BancoContexto : DbContext
+    {
+        public BancoContexto(DbContextOptions<BancoContexto> options) : base(options)
         {
-            public BancoContexto(DbContextOptions<BancoContexto> options) : base(options)
-            {
 
-            }
-
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
-            {
-                modelBuilder.ApplyConfiguration(new AlunoMapeamento());
-            modelBuilder.ApplyConfiguration(new ProfessorMapeamento());
         }
 
-            public DbSet<Aluno> aluno { get; set; }
-            public DbSet<Professor> Professor { get; set; }
-    }
-    
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+                modelBuilder.ApplyConfiguration(new AlunoMapeamento());
+                modelBuilder.ApplyConfiguration(new ProfessorMapeamento());
+        }
+
+        public DbSet<Aluno> aluno { get; set; }
+        public DbSet<Professor> Professor { get; set; }
+    }  
 }

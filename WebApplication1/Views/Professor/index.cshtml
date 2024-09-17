@@ -3,7 +3,7 @@
     ViewData["Title"] = "index";
 }
 
-<h1>index</h1>
+<h1>Professores</h1>
 @model List<Professor>
 <table class="table">
     <thead>
@@ -19,17 +19,17 @@
             foreach (Professor professor in Model)
             {
                 <tr>
-                    <td>@professor.Nome </td>
-                    <td>@professor.Materia </td>
-                    <td>@professor.Cpf </td>
+                    <td class="col-md-4">@professor.Nome </td>
+                    <td class="col-md-1">@professor.Materia </td>
+                    <td class="col-md-3">@professor.Cpf </td>
                     <td>
-                        <div class="d-grid gap-2 d-md-block">
-                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Editar" asp-route-id="@professor.Id">Editar</a>
+                        <div class="">
+                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="Editar" asp-route-id="@professor.Id">Editar</a>
                         </div>
                     </td>
                     <td>
-                    <div class="d-grid gap-2 d-md-block">
-                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="RemoverAluno" asp-route-id="@professor.Id">Remover</a>
+                    <div class="">
+                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="RemoverProfessor" asp-route-id="@professor.Id">Remover</a>
                     </div>
                     </td>
                 </tr>
@@ -39,5 +39,5 @@
     </tbody>
 </table>
 <div class="text-center">
-    <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="AdicionarAluno"> Adicionar Aluno</a>
+    <a class="btn btn-primary" type="button" asp-controller="Professor" asp-action="AdicionarProfessor"> Adicionar Professor</a>
 </div>

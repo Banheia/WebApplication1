@@ -1,14 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Adicionar Aluno";
+    ViewData["Title"] = "Adicionar Professor";
 }
 @model Professor
-<form asp-controller="Aluno" asp-action="AdiconarAluno" method="post">
+<form asp-controller="Professor" asp-action="InserirProfessor" method="post">
     <div class="mb-3 col-md-6">
         <label class="form-label">Nome</label>
         <input type="text" class="form-control" asp-for="Nome">
     </div>
     <div class="mb-3 col-md-6">
-        <label  class="form-label">Idade</label>
+        <label  class="form-label">Materia</label>
         <input type="text" class="form-control" asp-for="Materia">
     </div>
     <div class="mb-3 col-md-6">
@@ -16,5 +16,5 @@
         <input type="text" class="form-control" asp-for="Cpf">
     </div>
 
-    <button type="submit" class="btn btn-primary">Adiocionar</button>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
 </form>
