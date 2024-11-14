@@ -15,9 +15,11 @@ namespace WebApplication1.Data
         {
                 modelBuilder.ApplyConfiguration(new AlunoMapeamento());
                 modelBuilder.ApplyConfiguration(new ProfessorMapeamento());
+                modelBuilder.ApplyConfiguration(new AdminMapeamento());
         }
 
         public DbSet<Aluno> aluno { get; set; }
         public DbSet<Professor> Professor { get; set; }
+        public DbSet<Admin> Admin { get; set; }
     }  
 }

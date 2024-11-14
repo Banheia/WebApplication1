@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "_LayoutLogin";
+}
+@model Admin
+<form asp-controller="Home" asp-action="CheckLogin" method="post">
+    <div class="col-md-6">
+        <label for="Usuario" class="form-label">Usuário</label>
+        <input type="text" class="form-control" id="usuario" asp-for="Usuario">
+        <label for="Senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" asp-for="Senha">
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary col-1" role="button">Entrar</button>
+
+    </div>
+</form>

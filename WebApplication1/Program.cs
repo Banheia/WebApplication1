@@ -11,6 +11,7 @@ var connectionstring = builder.Configuration.GetConnectionString("StringConexao"
 builder.Services.AddDbContext<BancoContexto>(options => options.UseSqlServer(connectionstring));
 builder.Services.AddScoped<IAlunoRepositorio, AlunoRepositorio>();
 builder.Services.AddScoped<IProfessorRepositorio, ProfessorRepositorio>();
+builder.Services.AddScoped<ILoginRepositorio, LoginRepositorio>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Login}/{id?}");
 
 app.Run();
